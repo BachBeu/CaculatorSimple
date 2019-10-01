@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+    <link rel="stylesheet" href="Caculator.css">
+
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <td colspan="7">
+                <center><input id="result" type="text" readonly></center>
+            </td>
+        </tr>
+        <tr>
+            <td><input class="button" type="button" value="(" onclick="display(this)"></td>
+            <td><input class="button" type="button" value=")" onclick="display(this)"></td>
+            <td><input class="button" type="button" value="%" onclick="display(this)"></td>
+            <td><input class="button" type="button" value="AC" onclick="clear1()"></td>
+        </tr>
+        <tr>
+            <td><input class="button" type="button" value="7" onclick="display(this)"></td>
+            <td><input class="button" type="button" value="8" onclick="display(this)"></td>
+            <td><input class="button" type="button" value="9" onclick="display(this)"></td>
+            <td><input class="button" type="button" value="/" onclick="display(this)"></td>
+        </tr>
+        <tr>
+            <td><input class="button" type="button" value="4" onclick="display(this)"></td>
+            <td><input class="button" type="button" value="5" onclick="display(this)"></td>
+            <td><input class="button" type="button" value="6" onclick="display(this)"></td>
+            <td><input class="button" type="button" value="*" onclick="display(this)"></td>
+        </tr>
+        <tr>
+            <td><input class="button" type="button" value="1" onclick="display(this)"></td>
+            <td><input class="button" type="button" value="2" onclick="display(this)"></td>
+            <td><input class="button" type="button" value="3" onclick="display(this)"></td>
+            <td><input class="button" type="button" value="-" onclick="display(this)"></td>
+        </tr>
+        <tr>
+            <td><input class="button" type="button" value="0" onclick="display(this)"></td>
+            <td><input class="button" type="button" value="." onclick="display(this)"></td>
+            <td><input class="button" type="button" value="=" onclick="result1()"></td>
+            <td><input class="button" type="button" value="+" onclick="display(this)"></td>
+        </tr>
+    </table>
+</form>
+<script>
+    function display(a) {
+        let letter = a.getAttribute('value');
+        let calculator = document.getElementById('result').value;
+            document.getElementById('result').value = calculator + letter;
+    }
+    function result1() {
+        let expression = document.getElementById('result').value;
+        document.getElementById('result').value = eval(expression);
+    }
+    function clear1() {
+        document.getElementById("result").value = "";
+    }
+</script>
+</body>
+</html>
